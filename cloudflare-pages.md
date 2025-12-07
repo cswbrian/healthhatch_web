@@ -33,6 +33,8 @@ Cloudflare Pages will automatically:
 
 ## GitHub OAuth Setup for Decap CMS
 
+**Important**: Decap CMS requires a server-side OAuth proxy when hosted on Cloudflare Pages. We've created a Cloudflare Worker to handle this.
+
 ### Step 1: Create GitHub OAuth App
 
 1. Go to GitHub Settings → Developer settings → OAuth Apps
@@ -40,22 +42,72 @@ Cloudflare Pages will automatically:
 3. Fill in:
    - **Application name**: HealthHatch CMS (or your preferred name)
    - **Homepage URL**: `https://healthhatch-web.pages.dev`
-   - **Authorization callback URL**: `https://healthhatch-web.pages.dev/admin/callback`
+   - **Authorization callback URL**: `https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev/callback`
 4. Click "Register application"
 5. Copy the **Client ID** and generate a **Client Secret**
 
-### Step 2: Configure Cloudflare Pages
+### Step 2: Deploy the OAuth Proxy Worker
 
-1. Go to your Cloudflare Pages project settings
-2. Navigate to "Environment variables"
-3. Add the following variables:
-   - `OAUTH_CLIENT_ID`: Your Client ID
-   - `OAUTH_CLIENT_SECRET`: Your Client Secret
-   - `REDIRECT_URI`: `https://healthhatch-web.pages.dev/admin/callback`
+1. Install Wrangler CLI (if not already installed):
+   ```bash
+   npm install -g wrangler
+   ```
 
-### Step 3: Enable Git Gateway
+2. Login to Cloudflare:
+   ```bash
+   wrangler login
+   ```
 
-Decap CMS uses Git Gateway to authenticate with GitHub. Cloudflare Pages supports this through the GitHub integration.
+3. Navigate to the worker directory:
+   ```bash
+   cd worker
+   npm install
+   ```
+
+4. Set the required secrets:
+   ```bash
+   wrangler secret put GITHUB_CLIENT_ID
+   # Enter your Client ID when prompted
+   
+   wrangler secret put GITHUB_CLIENT_SECRET
+   # Enter your Client Secret when prompted
+   
+   wrangler secret put REDIRECT_URI
+   # Enter: https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev/callback
+   
+   wrangler secret put SITE_URL
+   # Enter: https://healthhatch-web.pages.dev
+   ```
+
+5. Deploy the worker:
+   ```bash
+   wrangler deploy
+   ```
+
+6. Note the worker URL: `https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev`
+
+### Step 3: Set Up Custom Domain for Worker (Recommended)
+
+1. Go to Cloudflare Dashboard → Workers & Pages → Your Worker
+2. Click "Triggers" → "Custom Domains"
+3. Add a custom domain like `auth.healthhatch-web.pages.dev`
+4. Update your GitHub OAuth App callback URL to match this domain
+
+### Step 4: Update Decap CMS Configuration
+
+Update `static/admin/config.yml` to use your worker URL:
+
+```yaml
+backend:
+  name: github
+  repo: cswbrian/healthhatch-web
+  branch: main
+  base_url: https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev
+  auth_endpoint: /auth
+  auth_scope: repo
+```
+
+After updating, commit and push the changes to trigger a new build.
 
 ## Custom Domain Setup
 
@@ -72,11 +124,14 @@ Decap CMS uses Git Gateway to authenticate with GitHub. Cloudflare Pages support
 - Verify all required directories exist
 - Check for syntax errors in `hugo.toml`
 
-### CMS Not Loading
+### CMS Not Loading / Authentication Issues
 
-- Verify OAuth credentials are set correctly
-- Check that callback URL matches your domain
-- Ensure Git Gateway is properly configured
+- Verify OAuth credentials are set correctly in the Worker secrets
+- Check that callback URL in GitHub OAuth App matches your worker URL
+- Ensure the worker is deployed and accessible
+- Verify `base_url` in `config.yml` matches your worker URL
+- Check browser console for errors
+- Ensure the worker has the correct secrets set via `wrangler secret put`
 
 ### Images Not Uploading
 

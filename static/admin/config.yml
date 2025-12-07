@@ -2,8 +2,8 @@ backend:
   name: github
   repo: cswbrian/healthhatch-web
   branch: main
-  base_url: https://healthhatch-web.pages.dev
-  auth_type: implicit
+  base_url: https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev
+  auth_endpoint: /auth
   auth_scope: repo
 
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
