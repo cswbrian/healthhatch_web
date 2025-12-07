@@ -2,7 +2,7 @@ backend:
   name: github
   repo: cswbrian/healthhatch-web
   branch: main
-  base_url: https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev
+  base_url: https://auth.healthhatch.co
   auth_endpoint: /auth
   auth_scope: repo
 

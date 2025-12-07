@@ -1,4 +1,4 @@
-baseURL = 'https://healthhatch-web.pages.dev/'
+baseURL = 'https://healthhatch.co/'
 languageCode = 'zh-HK'
 title = 'HealthHatch Blog'
 theme = 'ananke'

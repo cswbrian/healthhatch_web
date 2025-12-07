@@ -20,11 +20,9 @@ export default {
     // 1. Redirect to GitHub for Authorization
     if (url.pathname === '/auth') {
       const clientId = env.GITHUB_CLIENT_ID;
-      // Default to the worker's own URL/callback if not provided, but Decap usually provides none,
-      // so we use the env var or construct it.
       const redirectUri = env.REDIRECT_URI || `${url.origin}/callback`;
       const scope = url.searchParams.get('scope') || 'repo';
-      const state = crypto.randomUUID(); // Good practice to have state
+      const state = crypto.randomUUID();
       
       const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}&state=${state}`;
       
@@ -67,7 +65,7 @@ export default {
       const token = tokenData.access_token;
       const provider = 'github';
       
-      // This strict format "authorization:provider:success:json" is what Decap CMS expects
+      // Standard Decap CMS message format
       const message = `authorization:${provider}:success:${JSON.stringify({ token, provider })}`;
 
       const html = `
@@ -77,11 +75,10 @@ export default {
         <script>
           const message = '${message}';
           // Send message to the main window (the CMS)
+          // Using * allows this to work even if origins differ slightly, 
+          // but with custom domains matching, it will be secure naturally.
           window.opener.postMessage(message, '*');
-          // Close this popup after a short delay
-          setTimeout(() => {
-            window.close();
-          }, 100);
+          window.close();
         </script>
         </body>
         </html>

@@ -22,7 +22,7 @@ Add these environment variables in Cloudflare Pages settings:
 2. **For Decap CMS Authentication** (after setting up GitHub OAuth):
    - `OAUTH_CLIENT_ID`: Your GitHub OAuth App Client ID
    - `OAUTH_CLIENT_SECRET`: Your GitHub OAuth App Client Secret
-   - `REDIRECT_URI`: `https://healthhatch-web.pages.dev/admin/callback`
+   - `REDIRECT_URI`: `https://auth.healthhatch.co/callback`
 
 ### Build Process
 
@@ -41,8 +41,8 @@ Cloudflare Pages will automatically:
 2. Click "New OAuth App"
 3. Fill in:
    - **Application name**: HealthHatch CMS (or your preferred name)
-   - **Homepage URL**: `https://healthhatch-web.pages.dev`
-   - **Authorization callback URL**: `https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev/callback`
+   - **Homepage URL**: `https://healthhatch.co`
+   - **Authorization callback URL**: `https://auth.healthhatch.co/callback`
 4. Click "Register application"
 5. Copy the **Client ID** and generate a **Client Secret**
 
@@ -73,10 +73,10 @@ Cloudflare Pages will automatically:
    # Enter your Client Secret when prompted
    
    wrangler secret put REDIRECT_URI
-   # Enter: https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev/callback
+   # Enter: https://auth.healthhatch.co/callback
    
    wrangler secret put SITE_URL
-   # Enter: https://healthhatch-web.pages.dev
+   # Enter: https://healthhatch.co
    ```
 
 5. Deploy the worker:
@@ -84,13 +84,13 @@ Cloudflare Pages will automatically:
    wrangler deploy
    ```
 
-6. Note the worker URL: `https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev`
+6. Note the worker URL: `https://auth.healthhatch.co` (after custom domain setup)
 
 ### Step 3: Set Up Custom Domain for Worker (Recommended)
 
 1. Go to Cloudflare Dashboard → Workers & Pages → Your Worker
 2. Click "Triggers" → "Custom Domains"
-3. Add a custom domain like `auth.healthhatch-web.pages.dev`
+3. Add a custom domain: `auth.healthhatch.co`
 4. Update your GitHub OAuth App callback URL to match this domain
 
 ### Step 4: Update Decap CMS Configuration
@@ -102,7 +102,7 @@ backend:
   name: github
   repo: cswbrian/healthhatch-web
   branch: main
-  base_url: https://healthhatch-web-oauth-proxy.still-salad-f965.workers.dev
+  base_url: https://auth.healthhatch.co
   auth_endpoint: /auth
   auth_scope: repo
 ```
