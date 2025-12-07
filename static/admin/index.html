@@ -41,80 +41,25 @@
       }
     });
     
-    // Wait for Decap CMS to fully initialize (with strict limit to prevent infinite loop)
+    // Force initialization of Decap CMS
     window.addEventListener('load', function() {
-      console.log('[CMS] Window loaded, waiting for Decap CMS...');
+      console.log('[CMS] Window loaded, attempting manual initialization...');
       
-      let checkCount = 0;
-      const MAX_CHECKS = 15; // Strict limit
-      let intervalCleared = false;
-      
-      const checkInterval = setInterval(function() {
-        checkCount++;
-        
-        // Always stop after MAX_CHECKS
-        if (checkCount >= MAX_CHECKS) {
-          if (!intervalCleared) {
-            clearInterval(checkInterval);
-            intervalCleared = true;
-            console.warn('[CMS] ⚠️ Stopped checking after', MAX_CHECKS, 'attempts');
-          }
-          return;
-        }
-        
-        // Only log every 3rd check to reduce noise
-        if (checkCount % 3 === 0) {
-          console.log(`[CMS] Check #${checkCount}...`);
-        }
-        
+      // Wait a moment for the script to execute
+      setTimeout(function() {
         if (window.CMS) {
-          if (checkCount === 1 || checkCount % 3 === 0) {
-            console.log('[CMS] ✅ Decap CMS found!');
+          console.log('[CMS] CMS object found, calling init()...');
+          try {
+            // Force init - this often fixes the "backend undefined" issue
+            // We pass an empty object to tell it "use the defaults/config file"
+            // or we could pass the full config here if needed
+            window.CMS.init(); 
+            console.log('[CMS] CMS.init() called');
+          } catch (e) {
+            console.error('[CMS] Error during init:', e);
           }
-          
-          // Try to get backend
-          let backend = null;
-          if (window.CMS.getBackend) {
-            try {
-              backend = window.CMS.getBackend();
-              if (backend && (checkCount === 1 || checkCount % 3 === 0)) {
-                console.log('[CMS] ✅ Backend found!', backend.name);
-                console.log('[CMS] Backend methods:', Object.keys(backend));
-              }
-            } catch (e) {
-              if (checkCount === 1 || checkCount % 3 === 0) {
-                console.log('[CMS] getBackend() error:', e);
-              }
-            }
-          }
-          
-          // If backend found, log details and stop
-          if (backend) {
-            if (!intervalCleared) {
-              clearInterval(checkInterval);
-              intervalCleared = true;
-              console.log('[CMS] ✅ Backend initialized successfully!');
-              
-              // Check authentication state
-              if (typeof backend.currentUser === 'function') {
-                try {
-                  const user = backend.currentUser();
-                  console.log('[CMS] Current user:', user);
-                } catch (e) {
-                  console.log('[CMS] Error getting current user:', e);
-                }
-              }
-            }
-          } else if (checkCount === MAX_CHECKS - 1) {
-            // Last check - log final status
-            console.warn('[CMS] ⚠️ Backend still undefined after', MAX_CHECKS, 'checks');
-            console.log('[CMS] CMS object available:', !!window.CMS);
-            console.log('[CMS] getBackend method:', !!window.CMS.getBackend);
-          }
-        } else if (checkCount === MAX_CHECKS - 1) {
-          console.warn('[CMS] ⚠️ Decap CMS not found after', MAX_CHECKS, 'checks');
         }
-      }, 1000); // Check every 1 second instead of 500ms
+      }, 1000);
     });
     
     // Log any errors
