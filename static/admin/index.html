@@ -7,15 +7,102 @@
 </head>
 <body>
   <script>
-    // Debug: Log all messages received
+    console.log('=== Decap CMS Debug Logging ===');
+    
+    // Log all messages received
     window.addEventListener('message', function(event) {
-      console.log('Admin page received message:', event.data);
-      console.log('From origin:', event.origin);
+      console.log('[MESSAGE] Received:', event.data);
+      console.log('[MESSAGE] From origin:', event.origin);
+      console.log('[MESSAGE] Current origin:', window.location.origin);
       
       // Check if it's an authorization message
       if (typeof event.data === 'string' && event.data.startsWith('authorization:')) {
-        console.log('Authorization message detected!');
+        console.log('[AUTH] Authorization message detected!');
+        console.log('[AUTH] Full message:', event.data);
+        
+        // Parse the message
+        const parts = event.data.split(':');
+        if (parts.length >= 4) {
+          const provider = parts[1];
+          const status = parts[2];
+          const dataStr = parts.slice(3).join(':');
+          console.log('[AUTH] Provider:', provider);
+          console.log('[AUTH] Status:', status);
+          console.log('[AUTH] Data:', dataStr);
+          
+          try {
+            const data = JSON.parse(dataStr);
+            console.log('[AUTH] Parsed data:', data);
+            console.log('[AUTH] Token present:', !!data.token);
+          } catch (e) {
+            console.error('[AUTH] Failed to parse data:', e);
+          }
+        }
       }
+    });
+    
+    // Wait for Decap CMS to load and inspect it
+    window.addEventListener('load', function() {
+      console.log('[CMS] Window loaded, waiting for Decap CMS...');
+      
+      // Check periodically for Decap CMS
+      let checkCount = 0;
+      const checkInterval = setInterval(function() {
+        checkCount++;
+        console.log(`[CMS] Check #${checkCount}: Looking for Decap CMS...`);
+        
+        if (window.CMS) {
+          console.log('[CMS] ✅ Decap CMS found!');
+          console.log('[CMS] CMS object:', window.CMS);
+          
+          // Try to access the backend
+          if (window.CMS.getBackend) {
+            try {
+              const backend = window.CMS.getBackend();
+              console.log('[CMS] Backend:', backend);
+              console.log('[CMS] Backend name:', backend?.name);
+              console.log('[CMS] Backend type:', typeof backend);
+              
+              // Check if backend has authenticate method
+              if (backend && typeof backend.authenticate === 'function') {
+                console.log('[CMS] Backend has authenticate method');
+              }
+              
+              // Check authentication state
+              if (backend && typeof backend.currentUser === 'function') {
+                try {
+                  const user = backend.currentUser();
+                  console.log('[CMS] Current user:', user);
+                } catch (e) {
+                  console.log('[CMS] Error getting current user:', e);
+                }
+              }
+            } catch (e) {
+              console.error('[CMS] Error accessing backend:', e);
+            }
+          }
+          
+          // Check for netlifyIdentity
+          if (window.CMS.netlifyIdentity) {
+            console.log('[CMS] netlifyIdentity found:', window.CMS.netlifyIdentity);
+          }
+          
+          clearInterval(checkInterval);
+        } else if (checkCount > 20) {
+          console.warn('[CMS] ⚠️ Decap CMS not found after 20 checks');
+          clearInterval(checkInterval);
+        }
+      }, 500);
+    });
+    
+    // Log any errors
+    window.addEventListener('error', function(event) {
+      console.error('[ERROR]', event.error || event.message, event);
+    });
+    
+    // Log unhandled promise rejections
+    window.addEventListener('unhandledrejection', function(event) {
+      console.error('[PROMISE REJECTION]', event.reason);
     });
   </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
