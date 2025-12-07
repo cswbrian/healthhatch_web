@@ -95,14 +95,24 @@
     };
 
     // Initialize CMS with the config object
+    var cmsInitialized = false;
+    
+    function initCMS() {
+      if (cmsInitialized) return;
+      
+      if (window.CMS) {
+        window.CMS.init({ config: config });
+        cmsInitialized = true;
+        console.log('CMS initialized manually with config object');
+      }
+    }
+
     if (window.CMS) {
-      window.CMS.init({ config: config });
-      console.log('CMS initialized manually with config object');
+      initCMS();
     } else {
       // Fallback if script loads slowly
       window.onload = function() {
-        window.CMS.init({ config: config });
-        console.log('CMS initialized manually on window load');
+        initCMS();
       };
     }
     
