@@ -41,11 +41,10 @@
       }
     });
     
-    // Wait for Decap CMS to load and inspect it
+    // Wait for Decap CMS to fully initialize
     window.addEventListener('load', function() {
       console.log('[CMS] Window loaded, waiting for Decap CMS...');
       
-      // Check periodically for Decap CMS
       let checkCount = 0;
       const checkInterval = setInterval(function() {
         checkCount++;
@@ -53,41 +52,85 @@
         
         if (window.CMS) {
           console.log('[CMS] ✅ Decap CMS found!');
-          console.log('[CMS] CMS object:', window.CMS);
+          console.log('[CMS] CMS object keys:', Object.keys(window.CMS));
           
-          // Try to access the backend
+          // Try multiple ways to access the backend
+          let backend = null;
+          
+          // Method 1: getBackend()
           if (window.CMS.getBackend) {
             try {
-              const backend = window.CMS.getBackend();
-              console.log('[CMS] Backend:', backend);
-              console.log('[CMS] Backend name:', backend?.name);
-              console.log('[CMS] Backend type:', typeof backend);
-              
-              // Check if backend has authenticate method
-              if (backend && typeof backend.authenticate === 'function') {
-                console.log('[CMS] Backend has authenticate method');
-              }
-              
-              // Check authentication state
-              if (backend && typeof backend.currentUser === 'function') {
-                try {
-                  const user = backend.currentUser();
-                  console.log('[CMS] Current user:', user);
-                } catch (e) {
-                  console.log('[CMS] Error getting current user:', e);
-                }
+              backend = window.CMS.getBackend();
+              console.log('[CMS] getBackend() result:', backend);
+            } catch (e) {
+              console.log('[CMS] getBackend() error:', e);
+            }
+          } else {
+            console.log('[CMS] getBackend() method not found');
+          }
+          
+          // Method 2: Check for init() and see if we need to initialize
+          if (window.CMS.init) {
+            console.log('[CMS] init() method found');
+            try {
+              // Check if CMS is already initialized by looking for the root element
+              const cmsRoot = document.getElementById('nc-root') || document.querySelector('[data-netlify-cms]');
+              if (!cmsRoot) {
+                console.log('[CMS] CMS root not found, may need initialization');
+              } else {
+                console.log('[CMS] CMS root found:', cmsRoot);
               }
             } catch (e) {
-              console.error('[CMS] Error accessing backend:', e);
+              console.log('[CMS] Error checking root:', e);
             }
           }
           
-          // Check for netlifyIdentity
-          if (window.CMS.netlifyIdentity) {
-            console.log('[CMS] netlifyIdentity found:', window.CMS.netlifyIdentity);
+          // Method 3: Look for backend in window object
+          if (window.netlifyIdentity) {
+            console.log('[CMS] netlifyIdentity found:', window.netlifyIdentity);
           }
           
-          clearInterval(checkInterval);
+          // Method 4: Check if there's a CMS instance stored somewhere
+          if (window.CMS.registerBackend) {
+            console.log('[CMS] registerBackend method found');
+          }
+          
+          // Check if backend is actually initialized
+          if (backend) {
+            console.log('[CMS] ✅ Backend found!');
+            console.log('[CMS] Backend name:', backend.name);
+            console.log('[CMS] Backend methods:', Object.keys(backend));
+            
+            // Check authentication state
+            if (typeof backend.currentUser === 'function') {
+              try {
+                const user = backend.currentUser();
+                console.log('[CMS] Current user:', user);
+              } catch (e) {
+                console.log('[CMS] Error getting current user:', e);
+              }
+            }
+          } else {
+            console.warn('[CMS] ⚠️ Backend is still undefined');
+            console.log('[CMS] This might mean CMS hasn\'t fully initialized yet');
+            
+            // If we've checked many times and still no backend, try to manually trigger
+            if (checkCount > 10) {
+              console.log('[CMS] Attempting to find CMS instance in DOM...');
+              const cmsRoot = document.getElementById('nc-root') || document.querySelector('[data-netlify-cms]');
+              if (cmsRoot) {
+                console.log('[CMS] Found CMS root element, CMS should be initialized');
+              }
+            }
+          }
+          
+          // Only clear interval if we found backend OR checked many times
+          if (backend || checkCount > 30) {
+            clearInterval(checkInterval);
+            if (!backend) {
+              console.error('[CMS] ❌ Backend never initialized after 30 checks');
+            }
+          }
         } else if (checkCount > 20) {
           console.warn('[CMS] ⚠️ Decap CMS not found after 20 checks');
           clearInterval(checkInterval);
@@ -106,5 +149,47 @@
     });
   </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // After Decap CMS script loads, check if it initialized properly
+    setTimeout(function() {
+      console.log('[CMS] Checking config accessibility...');
+      
+      // Try to fetch the config to see if it's accessible
+      fetch('/admin/config.yml')
+        .then(response => {
+          console.log('[CMS] Config fetch status:', response.status);
+          if (response.ok) {
+            return response.text();
+          } else {
+            console.error('[CMS] Config not accessible, status:', response.status);
+          }
+        })
+        .then(configText => {
+          if (configText) {
+            console.log('[CMS] Config file is accessible, length:', configText.length);
+            console.log('[CMS] Config preview:', configText.substring(0, 200));
+          }
+        })
+        .catch(error => {
+          console.error('[CMS] Error fetching config:', error);
+        });
+      
+      // Check if CMS initialized and try to get backend again
+      if (window.CMS) {
+        console.log('[CMS] Re-checking backend after delay...');
+        setTimeout(function() {
+          if (window.CMS.getBackend) {
+            const backend = window.CMS.getBackend();
+            console.log('[CMS] Backend after delay:', backend);
+            if (backend) {
+              console.log('[CMS] ✅ Backend initialized!');
+            } else {
+              console.warn('[CMS] ⚠️ Backend still undefined - CMS may not have loaded config');
+            }
+          }
+        }, 2000);
+      }
+    }, 3000);
+  </script>
 </body>
 </html>
