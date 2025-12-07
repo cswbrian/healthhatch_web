@@ -1,0 +1,13 @@
+{
+  "name": "healthhatch-blog",
+  "version": "1.0.0",
+  "description": "HealthHatch bilingual blog with Hugo and Decap CMS",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./static/css/main.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./static/css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
+

@@ -1,0 +1,72 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+  # Use GitHub OAuth for authentication
+  # You'll need to set up OAuth app in GitHub and add environment variables in Cloudflare Pages
+
+media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  # Blog Posts - Traditional Chinese (Hong Kong) - Default Language
+  - name: "posts_zh_hk"
+    label: "文章 (繁體中文)"
+    folder: "content/zh-hk/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "標題", name: "title", widget: "string", required: true}
+      - {label: "發布日期", name: "date", widget: "datetime", required: true}
+      - {label: "描述", name: "description", widget: "text", required: false}
+      - {label: "精選圖片", name: "featured_image", widget: "image", required: false}
+      - {label: "標籤", name: "tags", widget: "list", required: false}
+      - {label: "分類", name: "categories", widget: "list", required: false}
+      - {label: "作者", name: "author", widget: "string", required: false}
+      - {label: "草稿", name: "draft", widget: "boolean", default: true, required: false}
+      - {label: "內容", name: "body", widget: "markdown", required: true}
+
+  # Blog Posts - English
+  - name: "posts_en"
+    label: "Posts (English)"
+    folder: "content/en/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Author", name: "author", widget: "string", required: false}
+      - {label: "Draft", name: "draft", widget: "boolean", default: true, required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+
+  # Pages - Traditional Chinese (Hong Kong)
+  - name: "pages_zh_hk"
+    label: "頁面 (繁體中文)"
+    folder: "content/zh-hk/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "標題", name: "title", widget: "string", required: true}
+      - {label: "發布日期", name: "date", widget: "datetime", required: true}
+      - {label: "描述", name: "description", widget: "text", required: false}
+      - {label: "精選圖片", name: "featured_image", widget: "image", required: false}
+      - {label: "草稿", name: "draft", widget: "boolean", default: true, required: false}
+      - {label: "內容", name: "body", widget: "markdown", required: true}
+
+  # Pages - English
+  - name: "pages_en"
+    label: "Pages (English)"
+    folder: "content/en/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false}
+      - {label: "Draft", name: "draft", widget: "boolean", default: true, required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+
