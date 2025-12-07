@@ -4,116 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  <!-- Link to config file to help Decap CMS auto-discover it -->
+  <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
 </head>
 <body>
+  <!-- Debug logging script -->
   <script>
     console.log('=== Decap CMS Debug Logging ===');
     
     // Log all messages received
     window.addEventListener('message', function(event) {
+      // Filter out webpack/dev messages
+      if (typeof event.data === 'object' && event.data?.type?.startsWith('webpack')) return;
+      
       console.log('[MESSAGE] Received:', event.data);
       console.log('[MESSAGE] From origin:', event.origin);
-      console.log('[MESSAGE] Current origin:', window.location.origin);
       
       // Check if it's an authorization message
       if (typeof event.data === 'string' && event.data.startsWith('authorization:')) {
         console.log('[AUTH] Authorization message detected!');
-        console.log('[AUTH] Full message:', event.data);
-        
-        // Parse the message
-        const parts = event.data.split(':');
-        if (parts.length >= 4) {
-          const provider = parts[1];
-          const status = parts[2];
-          const dataStr = parts.slice(3).join(':');
-          console.log('[AUTH] Provider:', provider);
-          console.log('[AUTH] Status:', status);
-          console.log('[AUTH] Data:', dataStr);
-          
-          try {
-            const data = JSON.parse(dataStr);
-            console.log('[AUTH] Parsed data:', data);
-            console.log('[AUTH] Token present:', !!data.token);
-          } catch (e) {
-            console.error('[AUTH] Failed to parse data:', e);
-          }
-        }
       }
     });
-    
-    // Force initialization of Decap CMS
-    window.addEventListener('load', function() {
-      console.log('[CMS] Window loaded, attempting manual initialization...');
-      
-      // Wait a moment for the script to execute
-      setTimeout(function() {
-        if (window.CMS) {
-          console.log('[CMS] CMS object found, calling init()...');
-          try {
-            // Force init - this often fixes the "backend undefined" issue
-            // We pass an empty object to tell it "use the defaults/config file"
-            // or we could pass the full config here if needed
-            window.CMS.init(); 
-            console.log('[CMS] CMS.init() called');
-          } catch (e) {
-            console.error('[CMS] Error during init:', e);
-          }
-        }
-      }, 1000);
-    });
-    
-    // Log any errors
-    window.addEventListener('error', function(event) {
-      console.error('[ERROR]', event.error || event.message, event);
-    });
-    
-    // Log unhandled promise rejections
-    window.addEventListener('unhandledrejection', function(event) {
-      console.error('[PROMISE REJECTION]', event.reason);
-    });
   </script>
+  
+  <!-- Load Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    // After Decap CMS script loads, check if it initialized properly
-    setTimeout(function() {
-      console.log('[CMS] Checking config accessibility...');
-      
-      // Try to fetch the config to see if it's accessible
-      fetch('/admin/config.yml')
-        .then(response => {
-          console.log('[CMS] Config fetch status:', response.status);
-          if (response.ok) {
-            return response.text();
-          } else {
-            console.error('[CMS] Config not accessible, status:', response.status);
-          }
-        })
-        .then(configText => {
-          if (configText) {
-            console.log('[CMS] Config file is accessible, length:', configText.length);
-            console.log('[CMS] Config preview:', configText.substring(0, 200));
-          }
-        })
-        .catch(error => {
-          console.error('[CMS] Error fetching config:', error);
-        });
-      
-      // Check if CMS initialized and try to get backend again
-      if (window.CMS) {
-        console.log('[CMS] Re-checking backend after delay...');
-        setTimeout(function() {
-          if (window.CMS.getBackend) {
-            const backend = window.CMS.getBackend();
-            console.log('[CMS] Backend after delay:', backend);
-            if (backend) {
-              console.log('[CMS] ✅ Backend initialized!');
-            } else {
-              console.warn('[CMS] ⚠️ Backend still undefined - CMS may not have loaded config');
-            }
-          }
-        }, 2000);
-      }
-    }, 3000);
-  </script>
 </body>
 </html>
