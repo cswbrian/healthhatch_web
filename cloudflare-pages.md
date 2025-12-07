@@ -22,7 +22,7 @@ Add these environment variables in Cloudflare Pages settings:
 2. **For Decap CMS Authentication** (after setting up GitHub OAuth):
    - `OAUTH_CLIENT_ID`: Your GitHub OAuth App Client ID
    - `OAUTH_CLIENT_SECRET`: Your GitHub OAuth App Client Secret
-   - `REDIRECT_URI`: `https://your-domain.pages.dev/admin/callback`
+   - `REDIRECT_URI`: `https://healthhatch-web.pages.dev/admin/callback`
 
 ### Build Process
 
@@ -39,8 +39,8 @@ Cloudflare Pages will automatically:
 2. Click "New OAuth App"
 3. Fill in:
    - **Application name**: HealthHatch CMS (or your preferred name)
-   - **Homepage URL**: `https://your-domain.pages.dev`
-   - **Authorization callback URL**: `https://your-domain.pages.dev/admin/callback`
+   - **Homepage URL**: `https://healthhatch-web.pages.dev`
+   - **Authorization callback URL**: `https://healthhatch-web.pages.dev/admin/callback`
 4. Click "Register application"
 5. Copy the **Client ID** and generate a **Client Secret**
 
@@ -51,7 +51,7 @@ Cloudflare Pages will automatically:
 3. Add the following variables:
    - `OAUTH_CLIENT_ID`: Your Client ID
    - `OAUTH_CLIENT_SECRET`: Your Client Secret
-   - `REDIRECT_URI`: `https://your-domain.pages.dev/admin/callback`
+   - `REDIRECT_URI`: `https://healthhatch-web.pages.dev/admin/callback`
 
 ### Step 3: Enable Git Gateway
 
