@@ -61,9 +61,9 @@ export default {
         });
       }
 
-      // Return token to Decap CMS
-      const origin = request.headers.get('Origin') || env.SITE_URL || 'https://healthhatch-web.pages.dev';
-      const redirectUrl = `${origin}/admin/?token=${tokenData.access_token}`;
+      // Return token to Decap CMS - use SITE_URL from env or default
+      const siteUrl = env.SITE_URL || 'https://healthhatch-web.pages.dev';
+      const redirectUrl = `${siteUrl}/admin/?token=${tokenData.access_token}`;
       
       return Response.redirect(redirectUrl, 302);
     }
