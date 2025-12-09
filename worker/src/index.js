@@ -21,7 +21,8 @@ export default {
     if (url.pathname === '/auth') {
       const clientId = env.GITHUB_CLIENT_ID;
       const redirectUri = env.REDIRECT_URI || `${url.origin}/callback`;
-      const scope = url.searchParams.get('scope') || 'repo';
+      // Default to 'repo,user' as per reference, but prefer query param
+      const scope = url.searchParams.get('scope') || 'repo,user';
       const state = crypto.randomUUID();
       
       const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}&state=${state}`;
@@ -55,18 +56,35 @@ export default {
       const tokenData = await tokenResponse.json();
       
       if (tokenData.error) {
-        return new Response(`OAuth error: ${tokenData.error_description || tokenData.error}`, { 
-          status: 400,
-          headers: { 'Content-Type': 'text/plain' }
+        return new Response(JSON.stringify(tokenData), { 
+          status: 401,
+          headers: { 'Content-Type': 'application/json' }
         });
       }
 
-      // 3. Redirect to the callback page on the main site (same-origin for reliable postMessage)
-      const token = tokenData.access_token;
-      const siteUrl = env.SITE_URL || 'https://healthhatch.co';
-      const redirectUrl = `${siteUrl}/admin/oauth-callback.html?token=${token}`;
+      // Return HTML with script to communicate with opener
+      // This replaces the redirection to oauth-callback.html
+      const content = `
+    <script>
+      (function() {
+        function receiveMessage(e) {
+          console.log("receiveMessage %o", e);
+          
+          // Send the token to the CMS window
+          window.opener.postMessage(
+            'authorization:github:success:${JSON.stringify({ token: tokenData.access_token, provider: "github" })}', 
+            e.origin
+          );
+        }
+        window.addEventListener("message", receiveMessage, false);
+        // Start handshake
+        window.opener.postMessage("authorizing:github", "*");
+      })()
+    </script>`;
       
-      return Response.redirect(redirectUrl, 302);
+      return new Response(content, {
+        headers: { "content-type": "text/html;charset=UTF-8" }
+      });
     }
 
     return new Response('Not Found', { status: 404 });
