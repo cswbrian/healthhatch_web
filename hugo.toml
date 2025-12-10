@@ -1,6 +1,6 @@
 baseURL = 'https://healthhatch.co/'
 languageCode = 'en'
-title = 'HealthHatch Blog'
+title = 'HealthHatch'
 
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
@@ -9,7 +9,7 @@ defaultContentLanguageInSubdir = false
   [languages.en]
     languageName = 'English'
     weight = 1
-    title = 'HealthHatch Blog'
+    title = 'HealthHatch'
     contentDir = 'content/en'
     
   [languages.zh-HK]
@@ -80,6 +80,6 @@ defaultContentLanguageInSubdir = false
 [params]
   featured_image = '/images/default-featured.jpg'
   author = 'HealthHatch Team'
-  description = 'HealthHatch Blog - Health Information and Latest News'
+  description = 'HealthHatch - Health Information and Latest News'
   show_recent_updates = true
 

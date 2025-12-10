@@ -36,3 +36,12 @@ other = "標籤為 \"{{ .Title }}\" 的頁面如下"
 
 [pageTitle]
 other = "{{ .Name }} 頁"
+
+[footerOrganization]
+other = "社區健康協會有限公司"
+
+[footerContactUs]
+other = "聯絡我們"
+
+[footerAddress]
+other = "香港九龍青山道700號時運中心1303"
