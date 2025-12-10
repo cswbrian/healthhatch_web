@@ -5,7 +5,7 @@ A bilingual blog website (Traditional Chinese Hong Kong / English) built with Hu
 ## Features
 
 - ✅ Bilingual support (Traditional Chinese Hong Kong as default, English as secondary)
-- ✅ Ananke theme with Tailwind CSS support
+- ✅ Custom layouts with Tailwind CSS support
 - ✅ No-code blog post creation with images via Decap CMS
 - ✅ No-code page content updates
 - ✅ Free hosting on Cloudflare Pages
@@ -16,8 +16,7 @@ A bilingual blog website (Traditional Chinese Hong Kong / English) built with Hu
 
 - **Static Site Generator**: Hugo
 - **CMS**: Decap CMS (formerly Netlify CMS)
-- **Theme**: Ananke
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS (via Hugo Pipes)
 - **Hosting**: Cloudflare Pages (free tier)
 - **Version Control**: Git/GitHub
 
@@ -34,21 +33,11 @@ A bilingual blog website (Traditional Chinese Hong Kong / English) built with Hu
 ### 1. Install Dependencies
 
 ```bash
-# Install Node.js dependencies for Tailwind CSS
+# Install Node.js dependencies for PostCSS and Tailwind CSS
 npm install
 ```
 
-### 2. Build Tailwind CSS
-
-```bash
-# Build CSS for production
-npm run build:css
-
-# Or watch for changes during development
-npm run watch:css
-```
-
-### 3. Run Hugo Server
+### 2. Run Hugo Server
 
 ```bash
 # Start Hugo development server
@@ -99,9 +88,8 @@ healthhatch_web/
 │   ├── images/
 │   │   └── uploads/    # CMS-uploaded images
 │   └── _headers        # Cloudflare Pages headers
-├── themes/
-│   └── ananke/         # Ananke theme
 ├── hugo.toml           # Hugo configuration
+├── postcss.config.js   # PostCSS configuration
 ├── tailwind.config.js  # Tailwind CSS configuration
 ├── package.json        # Node.js dependencies
 └── README.md           # This file
@@ -214,7 +202,7 @@ See [cloudflare-pages.md](cloudflare-pages.md) for detailed deployment instructi
 4. Select your repository
 5. Configure build settings:
    - **Framework preset**: Hugo
-   - **Build command**: `hugo`
+   - **Build command**: `npm install && hugo`
    - **Build output directory**: `public`
 6. Add environment variables (see cloudflare-pages.md)
 7. Click "Save and Deploy"
@@ -223,19 +211,14 @@ See [cloudflare-pages.md](cloudflare-pages.md) for detailed deployment instructi
 
 ### Tailwind CSS
 
-The project is set up with Tailwind CSS. To customize:
+The project uses Tailwind CSS integrated with Hugo Pipes for automatic CSS processing. To customize:
 
-1. Edit `assets/css/input.css` to add custom styles
-2. Run `npm run build:css` to compile
-3. The compiled CSS is in `static/css/main.css`
+1. Edit `assets/css/input.css` to add custom styles or component classes
+2. Edit `tailwind.config.js` to customize theme colors, fonts, etc.
+3. Run `hugo server` - CSS is automatically processed during Hugo build
+4. No separate CSS build step needed!
 
-### Theme Customization
-
-Since the Ananke theme is installed directly (not as a submodule), you can:
-
-1. Edit files in `themes/ananke/` directly
-2. Override layouts by copying files from `themes/ananke/layouts/` to `layouts/`
-3. Customize CSS in the theme's assets or use Tailwind CSS
+**Note**: The `npm run build:css` script is still available for standalone CSS builds if needed, but Hugo Pipes handles CSS processing automatically.
 
 ### Language Configuration
 
@@ -269,14 +252,16 @@ Edit `hugo.toml` to modify:
 
 - Run `hugo server -D` to include draft content
 - Clear Hugo cache: `rm -rf resources/_gen`
-- Rebuild Tailwind CSS: `npm run build:css`
+- Ensure Node.js dependencies are installed: `npm install`
+- If CSS isn't updating, restart Hugo server (Hugo Pipes processes CSS on each build)
 
 ## Support
 
 For issues or questions:
 - Hugo Documentation: https://gohugo.io/documentation/
+- Hugo Pipes: https://gohugo.io/hugo-pipes/
 - Decap CMS Documentation: https://decapcms.org/docs/
-- Ananke Theme: https://github.com/theNewDynamic/gohugo-theme-ananke
+- Tailwind CSS Documentation: https://tailwindcss.com/docs
 
 ## License
 

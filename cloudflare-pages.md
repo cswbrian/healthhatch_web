@@ -7,9 +7,11 @@ When setting up your Cloudflare Pages project, use the following settings:
 ### Build Settings
 
 - **Framework preset**: Hugo
-- **Build command**: `hugo`
+- **Build command**: `npm install && hugo`
 - **Build output directory**: `public`
 - **Root directory**: `/` (leave empty or set to root)
+
+**Note**: `npm install` is required to install PostCSS and Tailwind CSS dependencies for Hugo Pipes to process CSS.
 
 ### Environment Variables
 
@@ -28,8 +30,9 @@ Add these environment variables in Cloudflare Pages settings:
 
 Cloudflare Pages will automatically:
 1. Install Hugo (using the version specified or latest)
-2. Run `hugo` to build the site
-3. Deploy the `public` directory
+2. Install Node.js dependencies (via `npm install`)
+3. Run `hugo` to build the site (Hugo Pipes will process CSS automatically)
+4. Deploy the `public` directory
 
 ## GitHub OAuth Setup for Decap CMS
 

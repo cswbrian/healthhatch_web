@@ -38,7 +38,7 @@ defaultContentLanguageInSubdir = false
 [[languages.zh-HK.menu.main]]
   identifier = 'about'
   name = '關於我們'
-  url = '/zh-hk/about/'
+  url = '/zh-hk/pages/about/'
   weight = 2
 [[languages.zh-HK.menu.main]]
   identifier = 'services'
@@ -72,10 +72,15 @@ defaultContentLanguageInSubdir = false
   url = '/'
   weight = 1
 [[languages.en.menu.main]]
+  identifier = 'about'
+  name = 'About'
+  url = '/pages/about/'
+  weight = 2
+[[languages.en.menu.main]]
   identifier = 'updates'
   name = 'Updates'
   url = '/updates/'
-  weight = 2
+  weight = 3
 
 [params]
   featured_image = '/images/default-featured.jpg'
@@ -83,3 +88,10 @@ defaultContentLanguageInSubdir = false
   description = 'HealthHatch - Health Information and Latest News'
   show_recent_updates = true
 
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"

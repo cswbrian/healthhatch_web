@@ -14,24 +14,19 @@
 - [x] i18n translations file created (zh-HK.toml)
 - [x] Home pages created for both languages
 
-### 3. Ananke Theme
-- [x] Theme installed (one-off clone for customization)
-- [x] Theme configured in hugo.toml
-- [x] Theme supports multilingual content
-
-### 4. Tailwind CSS Integration
+### 3. Tailwind CSS Integration
 - [x] Tailwind CSS configured
-- [x] Build scripts added to package.json
-- [x] Initial CSS build completed
+- [x] PostCSS configured for Hugo Pipes
+- [x] Hugo Pipes integration for automatic CSS processing
 - [x] Layout partial created for CSS inclusion
 
-### 5. Content Structure
+### 4. Content Structure
 - [x] Archetypes created (posts.md, pages.md)
 - [x] Content directories for both languages
 - [x] Example posts created
 - [x] Index pages for collections
 
-### 6. Decap CMS Setup
+### 5. Decap CMS Setup
 - [x] Admin interface created (static/admin/index.html)
 - [x] CMS configuration file created
 - [x] Collections configured for:
@@ -41,18 +36,18 @@
   - Pages (English)
 - [x] Image upload configuration
 
-### 7. Image Handling
+### 6. Image Handling
 - [x] Upload directory created (static/images/uploads/)
 - [x] Media folder paths configured
 - [x] Public folder paths configured
 
-### 8. Cloudflare Pages Configuration
+### 7. Cloudflare Pages Configuration
 - [x] Headers file created
 - [x] Deployment guide created
 - [x] .gitignore configured
 - [x] .gitattributes configured
 
-### 9. Documentation
+### 8. Documentation
 - [x] Comprehensive README created
 - [x] CMS usage guide for non-technical users
 - [x] Deployment instructions
@@ -78,16 +73,16 @@
    ```
 3. **Deploy to Cloudflare Pages**: Follow instructions in `cloudflare-pages.md`
 4. **Set up GitHub OAuth**: Configure OAuth app for Decap CMS authentication
-5. **Customize theme**: Edit Ananke theme files as needed
-6. **Add Tailwind styles**: Customize `assets/css/input.css` and rebuild with `npm run build:css`
+5. **Customize layouts**: Edit files in `layouts/` directory
+6. **Add Tailwind styles**: Customize `assets/css/input.css` - CSS is automatically processed by Hugo Pipes
 
 ## Testing Locally
 
 ```bash
-# Build Tailwind CSS
-npm run build:css
+# Install Node.js dependencies (for PostCSS/Tailwind)
+npm install
 
-# Start Hugo server
+# Start Hugo server (CSS is automatically processed via Hugo Pipes)
 hugo server -D
 
 # Access site at http://localhost:1313
@@ -105,11 +100,10 @@ healthhatch_web/
 ├── layouts/             ✅ Custom layouts
 ├── static/
 │   ├── admin/           ✅ Decap CMS files
-│   ├── css/             ✅ Compiled Tailwind CSS
 │   └── images/uploads/  ✅ Image upload directory
-├── themes/ananke/       ✅ Ananke theme
 ├── hugo.toml            ✅ Hugo configuration
 ├── package.json         ✅ Node.js dependencies
+├── postcss.config.js    ✅ PostCSS configuration
 ├── tailwind.config.js   ✅ Tailwind configuration
 └── README.md            ✅ Documentation
 ```

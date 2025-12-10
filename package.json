@@ -6,8 +6,12 @@
     "build:css": "tailwindcss -i ./assets/css/input.css -o ./static/css/main.css --minify",
     "watch:css": "tailwindcss -i ./assets/css/input.css -o ./static/css/main.css --watch"
   },
+  "comment": "Note: CSS is now processed via Hugo Pipes. These scripts are optional for standalone CSS builds.",
   "devDependencies": {
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "autoprefixer": "^10.4.17"
   }
 }
 
