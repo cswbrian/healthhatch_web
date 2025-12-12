@@ -4,6 +4,21 @@ module.exports = {
     './layouts/**/*.html',
     './content/**/*.md',
   ],
+  safelist: [
+    'text-brand-green',
+    'text-brand-orange',
+    'bg-brand-green',
+    'bg-brand-orange',
+    'bg-brand-green-light',
+    'bg-brand-green-lighter',
+    'bg-brand-orange-light',
+    'bg-brand-yellow-light',
+    'hover:text-brand-green',
+    'hover:bg-brand-green',
+    {
+      pattern: /(text|bg|border|hover:text|hover:bg)-brand-(green|orange|yellow)(-(light|lighter))?/,
+    },
+  ],
   theme: {
     extend: {
       colors: {

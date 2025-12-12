@@ -1206,10 +1206,6 @@ video {
   text-underline-offset: 2px;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -1224,10 +1220,6 @@ video {
 
 .left-0 {
   left: 0px;
-}
-
-.right-0 {
-  right: 0px;
 }
 
 .top-0 {
@@ -1349,10 +1341,6 @@ video {
 
 .h-\[72px\] {
   height: 72px;
-}
-
-.min-h-\[72px\] {
-  min-height: 72px;
 }
 
 .min-h-screen {
@@ -1519,6 +1507,540 @@ video {
   border-top-width: 1px;
 }
 
+.border-brand-green {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 80 22 / var(--tw-border-opacity, 1));
+}
+
+.border-brand-green-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(168 213 163 / var(--tw-border-opacity, 1));
+}
+
+.border-brand-green-light\/0 {
+  border-color: rgb(168 213 163 / 0);
+}
+
+.border-brand-green-light\/10 {
+  border-color: rgb(168 213 163 / 0.1);
+}
+
+.border-brand-green-light\/100 {
+  border-color: rgb(168 213 163 / 1);
+}
+
+.border-brand-green-light\/15 {
+  border-color: rgb(168 213 163 / 0.15);
+}
+
+.border-brand-green-light\/20 {
+  border-color: rgb(168 213 163 / 0.2);
+}
+
+.border-brand-green-light\/25 {
+  border-color: rgb(168 213 163 / 0.25);
+}
+
+.border-brand-green-light\/30 {
+  border-color: rgb(168 213 163 / 0.3);
+}
+
+.border-brand-green-light\/35 {
+  border-color: rgb(168 213 163 / 0.35);
+}
+
+.border-brand-green-light\/40 {
+  border-color: rgb(168 213 163 / 0.4);
+}
+
+.border-brand-green-light\/45 {
+  border-color: rgb(168 213 163 / 0.45);
+}
+
+.border-brand-green-light\/5 {
+  border-color: rgb(168 213 163 / 0.05);
+}
+
+.border-brand-green-light\/50 {
+  border-color: rgb(168 213 163 / 0.5);
+}
+
+.border-brand-green-light\/55 {
+  border-color: rgb(168 213 163 / 0.55);
+}
+
+.border-brand-green-light\/60 {
+  border-color: rgb(168 213 163 / 0.6);
+}
+
+.border-brand-green-light\/65 {
+  border-color: rgb(168 213 163 / 0.65);
+}
+
+.border-brand-green-light\/70 {
+  border-color: rgb(168 213 163 / 0.7);
+}
+
+.border-brand-green-light\/75 {
+  border-color: rgb(168 213 163 / 0.75);
+}
+
+.border-brand-green-light\/80 {
+  border-color: rgb(168 213 163 / 0.8);
+}
+
+.border-brand-green-light\/85 {
+  border-color: rgb(168 213 163 / 0.85);
+}
+
+.border-brand-green-light\/90 {
+  border-color: rgb(168 213 163 / 0.9);
+}
+
+.border-brand-green-light\/95 {
+  border-color: rgb(168 213 163 / 0.95);
+}
+
+.border-brand-green-lighter {
+  --tw-border-opacity: 1;
+  border-color: rgb(232 245 230 / var(--tw-border-opacity, 1));
+}
+
+.border-brand-green-lighter\/0 {
+  border-color: rgb(232 245 230 / 0);
+}
+
+.border-brand-green-lighter\/10 {
+  border-color: rgb(232 245 230 / 0.1);
+}
+
+.border-brand-green-lighter\/100 {
+  border-color: rgb(232 245 230 / 1);
+}
+
+.border-brand-green-lighter\/15 {
+  border-color: rgb(232 245 230 / 0.15);
+}
+
+.border-brand-green-lighter\/20 {
+  border-color: rgb(232 245 230 / 0.2);
+}
+
+.border-brand-green-lighter\/25 {
+  border-color: rgb(232 245 230 / 0.25);
+}
+
+.border-brand-green-lighter\/30 {
+  border-color: rgb(232 245 230 / 0.3);
+}
+
+.border-brand-green-lighter\/35 {
+  border-color: rgb(232 245 230 / 0.35);
+}
+
+.border-brand-green-lighter\/40 {
+  border-color: rgb(232 245 230 / 0.4);
+}
+
+.border-brand-green-lighter\/45 {
+  border-color: rgb(232 245 230 / 0.45);
+}
+
+.border-brand-green-lighter\/5 {
+  border-color: rgb(232 245 230 / 0.05);
+}
+
+.border-brand-green-lighter\/50 {
+  border-color: rgb(232 245 230 / 0.5);
+}
+
+.border-brand-green-lighter\/55 {
+  border-color: rgb(232 245 230 / 0.55);
+}
+
+.border-brand-green-lighter\/60 {
+  border-color: rgb(232 245 230 / 0.6);
+}
+
+.border-brand-green-lighter\/65 {
+  border-color: rgb(232 245 230 / 0.65);
+}
+
+.border-brand-green-lighter\/70 {
+  border-color: rgb(232 245 230 / 0.7);
+}
+
+.border-brand-green-lighter\/75 {
+  border-color: rgb(232 245 230 / 0.75);
+}
+
+.border-brand-green-lighter\/80 {
+  border-color: rgb(232 245 230 / 0.8);
+}
+
+.border-brand-green-lighter\/85 {
+  border-color: rgb(232 245 230 / 0.85);
+}
+
+.border-brand-green-lighter\/90 {
+  border-color: rgb(232 245 230 / 0.9);
+}
+
+.border-brand-green-lighter\/95 {
+  border-color: rgb(232 245 230 / 0.95);
+}
+
+.border-brand-green\/0 {
+  border-color: rgb(45 80 22 / 0);
+}
+
+.border-brand-green\/10 {
+  border-color: rgb(45 80 22 / 0.1);
+}
+
+.border-brand-green\/100 {
+  border-color: rgb(45 80 22 / 1);
+}
+
+.border-brand-green\/15 {
+  border-color: rgb(45 80 22 / 0.15);
+}
+
+.border-brand-green\/20 {
+  border-color: rgb(45 80 22 / 0.2);
+}
+
+.border-brand-green\/25 {
+  border-color: rgb(45 80 22 / 0.25);
+}
+
+.border-brand-green\/30 {
+  border-color: rgb(45 80 22 / 0.3);
+}
+
+.border-brand-green\/35 {
+  border-color: rgb(45 80 22 / 0.35);
+}
+
+.border-brand-green\/40 {
+  border-color: rgb(45 80 22 / 0.4);
+}
+
+.border-brand-green\/45 {
+  border-color: rgb(45 80 22 / 0.45);
+}
+
+.border-brand-green\/5 {
+  border-color: rgb(45 80 22 / 0.05);
+}
+
+.border-brand-green\/50 {
+  border-color: rgb(45 80 22 / 0.5);
+}
+
+.border-brand-green\/55 {
+  border-color: rgb(45 80 22 / 0.55);
+}
+
+.border-brand-green\/60 {
+  border-color: rgb(45 80 22 / 0.6);
+}
+
+.border-brand-green\/65 {
+  border-color: rgb(45 80 22 / 0.65);
+}
+
+.border-brand-green\/70 {
+  border-color: rgb(45 80 22 / 0.7);
+}
+
+.border-brand-green\/75 {
+  border-color: rgb(45 80 22 / 0.75);
+}
+
+.border-brand-green\/80 {
+  border-color: rgb(45 80 22 / 0.8);
+}
+
+.border-brand-green\/85 {
+  border-color: rgb(45 80 22 / 0.85);
+}
+
+.border-brand-green\/90 {
+  border-color: rgb(45 80 22 / 0.9);
+}
+
+.border-brand-green\/95 {
+  border-color: rgb(45 80 22 / 0.95);
+}
+
+.border-brand-orange {
+  --tw-border-opacity: 1;
+  border-color: rgb(249 115 22 / var(--tw-border-opacity, 1));
+}
+
+.border-brand-orange-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 146 60 / var(--tw-border-opacity, 1));
+}
+
+.border-brand-orange-light\/0 {
+  border-color: rgb(251 146 60 / 0);
+}
+
+.border-brand-orange-light\/10 {
+  border-color: rgb(251 146 60 / 0.1);
+}
+
+.border-brand-orange-light\/100 {
+  border-color: rgb(251 146 60 / 1);
+}
+
+.border-brand-orange-light\/15 {
+  border-color: rgb(251 146 60 / 0.15);
+}
+
+.border-brand-orange-light\/20 {
+  border-color: rgb(251 146 60 / 0.2);
+}
+
+.border-brand-orange-light\/25 {
+  border-color: rgb(251 146 60 / 0.25);
+}
+
+.border-brand-orange-light\/30 {
+  border-color: rgb(251 146 60 / 0.3);
+}
+
+.border-brand-orange-light\/35 {
+  border-color: rgb(251 146 60 / 0.35);
+}
+
+.border-brand-orange-light\/40 {
+  border-color: rgb(251 146 60 / 0.4);
+}
+
+.border-brand-orange-light\/45 {
+  border-color: rgb(251 146 60 / 0.45);
+}
+
+.border-brand-orange-light\/5 {
+  border-color: rgb(251 146 60 / 0.05);
+}
+
+.border-brand-orange-light\/50 {
+  border-color: rgb(251 146 60 / 0.5);
+}
+
+.border-brand-orange-light\/55 {
+  border-color: rgb(251 146 60 / 0.55);
+}
+
+.border-brand-orange-light\/60 {
+  border-color: rgb(251 146 60 / 0.6);
+}
+
+.border-brand-orange-light\/65 {
+  border-color: rgb(251 146 60 / 0.65);
+}
+
+.border-brand-orange-light\/70 {
+  border-color: rgb(251 146 60 / 0.7);
+}
+
+.border-brand-orange-light\/75 {
+  border-color: rgb(251 146 60 / 0.75);
+}
+
+.border-brand-orange-light\/80 {
+  border-color: rgb(251 146 60 / 0.8);
+}
+
+.border-brand-orange-light\/85 {
+  border-color: rgb(251 146 60 / 0.85);
+}
+
+.border-brand-orange-light\/90 {
+  border-color: rgb(251 146 60 / 0.9);
+}
+
+.border-brand-orange-light\/95 {
+  border-color: rgb(251 146 60 / 0.95);
+}
+
+.border-brand-orange\/0 {
+  border-color: rgb(249 115 22 / 0);
+}
+
+.border-brand-orange\/10 {
+  border-color: rgb(249 115 22 / 0.1);
+}
+
+.border-brand-orange\/100 {
+  border-color: rgb(249 115 22 / 1);
+}
+
+.border-brand-orange\/15 {
+  border-color: rgb(249 115 22 / 0.15);
+}
+
+.border-brand-orange\/20 {
+  border-color: rgb(249 115 22 / 0.2);
+}
+
+.border-brand-orange\/25 {
+  border-color: rgb(249 115 22 / 0.25);
+}
+
+.border-brand-orange\/30 {
+  border-color: rgb(249 115 22 / 0.3);
+}
+
+.border-brand-orange\/35 {
+  border-color: rgb(249 115 22 / 0.35);
+}
+
+.border-brand-orange\/40 {
+  border-color: rgb(249 115 22 / 0.4);
+}
+
+.border-brand-orange\/45 {
+  border-color: rgb(249 115 22 / 0.45);
+}
+
+.border-brand-orange\/5 {
+  border-color: rgb(249 115 22 / 0.05);
+}
+
+.border-brand-orange\/50 {
+  border-color: rgb(249 115 22 / 0.5);
+}
+
+.border-brand-orange\/55 {
+  border-color: rgb(249 115 22 / 0.55);
+}
+
+.border-brand-orange\/60 {
+  border-color: rgb(249 115 22 / 0.6);
+}
+
+.border-brand-orange\/65 {
+  border-color: rgb(249 115 22 / 0.65);
+}
+
+.border-brand-orange\/70 {
+  border-color: rgb(249 115 22 / 0.7);
+}
+
+.border-brand-orange\/75 {
+  border-color: rgb(249 115 22 / 0.75);
+}
+
+.border-brand-orange\/80 {
+  border-color: rgb(249 115 22 / 0.8);
+}
+
+.border-brand-orange\/85 {
+  border-color: rgb(249 115 22 / 0.85);
+}
+
+.border-brand-orange\/90 {
+  border-color: rgb(249 115 22 / 0.9);
+}
+
+.border-brand-orange\/95 {
+  border-color: rgb(249 115 22 / 0.95);
+}
+
+.border-brand-yellow-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(253 230 138 / var(--tw-border-opacity, 1));
+}
+
+.border-brand-yellow-light\/0 {
+  border-color: rgb(253 230 138 / 0);
+}
+
+.border-brand-yellow-light\/10 {
+  border-color: rgb(253 230 138 / 0.1);
+}
+
+.border-brand-yellow-light\/100 {
+  border-color: rgb(253 230 138 / 1);
+}
+
+.border-brand-yellow-light\/15 {
+  border-color: rgb(253 230 138 / 0.15);
+}
+
+.border-brand-yellow-light\/20 {
+  border-color: rgb(253 230 138 / 0.2);
+}
+
+.border-brand-yellow-light\/25 {
+  border-color: rgb(253 230 138 / 0.25);
+}
+
+.border-brand-yellow-light\/30 {
+  border-color: rgb(253 230 138 / 0.3);
+}
+
+.border-brand-yellow-light\/35 {
+  border-color: rgb(253 230 138 / 0.35);
+}
+
+.border-brand-yellow-light\/40 {
+  border-color: rgb(253 230 138 / 0.4);
+}
+
+.border-brand-yellow-light\/45 {
+  border-color: rgb(253 230 138 / 0.45);
+}
+
+.border-brand-yellow-light\/5 {
+  border-color: rgb(253 230 138 / 0.05);
+}
+
+.border-brand-yellow-light\/50 {
+  border-color: rgb(253 230 138 / 0.5);
+}
+
+.border-brand-yellow-light\/55 {
+  border-color: rgb(253 230 138 / 0.55);
+}
+
+.border-brand-yellow-light\/60 {
+  border-color: rgb(253 230 138 / 0.6);
+}
+
+.border-brand-yellow-light\/65 {
+  border-color: rgb(253 230 138 / 0.65);
+}
+
+.border-brand-yellow-light\/70 {
+  border-color: rgb(253 230 138 / 0.7);
+}
+
+.border-brand-yellow-light\/75 {
+  border-color: rgb(253 230 138 / 0.75);
+}
+
+.border-brand-yellow-light\/80 {
+  border-color: rgb(253 230 138 / 0.8);
+}
+
+.border-brand-yellow-light\/85 {
+  border-color: rgb(253 230 138 / 0.85);
+}
+
+.border-brand-yellow-light\/90 {
+  border-color: rgb(253 230 138 / 0.9);
+}
+
+.border-brand-yellow-light\/95 {
+  border-color: rgb(253 230 138 / 0.95);
+}
+
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
@@ -1534,9 +2056,533 @@ video {
   background-color: rgb(45 80 22 / var(--tw-bg-opacity, 1));
 }
 
+.bg-brand-green-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 213 163 / var(--tw-bg-opacity, 1));
+}
+
+.bg-brand-green-light\/0 {
+  background-color: rgb(168 213 163 / 0);
+}
+
+.bg-brand-green-light\/10 {
+  background-color: rgb(168 213 163 / 0.1);
+}
+
+.bg-brand-green-light\/100 {
+  background-color: rgb(168 213 163 / 1);
+}
+
+.bg-brand-green-light\/15 {
+  background-color: rgb(168 213 163 / 0.15);
+}
+
+.bg-brand-green-light\/20 {
+  background-color: rgb(168 213 163 / 0.2);
+}
+
+.bg-brand-green-light\/25 {
+  background-color: rgb(168 213 163 / 0.25);
+}
+
+.bg-brand-green-light\/30 {
+  background-color: rgb(168 213 163 / 0.3);
+}
+
+.bg-brand-green-light\/35 {
+  background-color: rgb(168 213 163 / 0.35);
+}
+
+.bg-brand-green-light\/40 {
+  background-color: rgb(168 213 163 / 0.4);
+}
+
+.bg-brand-green-light\/45 {
+  background-color: rgb(168 213 163 / 0.45);
+}
+
+.bg-brand-green-light\/5 {
+  background-color: rgb(168 213 163 / 0.05);
+}
+
+.bg-brand-green-light\/50 {
+  background-color: rgb(168 213 163 / 0.5);
+}
+
+.bg-brand-green-light\/55 {
+  background-color: rgb(168 213 163 / 0.55);
+}
+
+.bg-brand-green-light\/60 {
+  background-color: rgb(168 213 163 / 0.6);
+}
+
+.bg-brand-green-light\/65 {
+  background-color: rgb(168 213 163 / 0.65);
+}
+
+.bg-brand-green-light\/70 {
+  background-color: rgb(168 213 163 / 0.7);
+}
+
+.bg-brand-green-light\/75 {
+  background-color: rgb(168 213 163 / 0.75);
+}
+
+.bg-brand-green-light\/80 {
+  background-color: rgb(168 213 163 / 0.8);
+}
+
+.bg-brand-green-light\/85 {
+  background-color: rgb(168 213 163 / 0.85);
+}
+
+.bg-brand-green-light\/90 {
+  background-color: rgb(168 213 163 / 0.9);
+}
+
+.bg-brand-green-light\/95 {
+  background-color: rgb(168 213 163 / 0.95);
+}
+
+.bg-brand-green-lighter {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 245 230 / var(--tw-bg-opacity, 1));
+}
+
+.bg-brand-green-lighter\/0 {
+  background-color: rgb(232 245 230 / 0);
+}
+
+.bg-brand-green-lighter\/10 {
+  background-color: rgb(232 245 230 / 0.1);
+}
+
+.bg-brand-green-lighter\/100 {
+  background-color: rgb(232 245 230 / 1);
+}
+
+.bg-brand-green-lighter\/15 {
+  background-color: rgb(232 245 230 / 0.15);
+}
+
+.bg-brand-green-lighter\/20 {
+  background-color: rgb(232 245 230 / 0.2);
+}
+
+.bg-brand-green-lighter\/25 {
+  background-color: rgb(232 245 230 / 0.25);
+}
+
+.bg-brand-green-lighter\/30 {
+  background-color: rgb(232 245 230 / 0.3);
+}
+
+.bg-brand-green-lighter\/35 {
+  background-color: rgb(232 245 230 / 0.35);
+}
+
+.bg-brand-green-lighter\/40 {
+  background-color: rgb(232 245 230 / 0.4);
+}
+
+.bg-brand-green-lighter\/45 {
+  background-color: rgb(232 245 230 / 0.45);
+}
+
+.bg-brand-green-lighter\/5 {
+  background-color: rgb(232 245 230 / 0.05);
+}
+
+.bg-brand-green-lighter\/50 {
+  background-color: rgb(232 245 230 / 0.5);
+}
+
+.bg-brand-green-lighter\/55 {
+  background-color: rgb(232 245 230 / 0.55);
+}
+
+.bg-brand-green-lighter\/60 {
+  background-color: rgb(232 245 230 / 0.6);
+}
+
+.bg-brand-green-lighter\/65 {
+  background-color: rgb(232 245 230 / 0.65);
+}
+
+.bg-brand-green-lighter\/70 {
+  background-color: rgb(232 245 230 / 0.7);
+}
+
+.bg-brand-green-lighter\/75 {
+  background-color: rgb(232 245 230 / 0.75);
+}
+
+.bg-brand-green-lighter\/80 {
+  background-color: rgb(232 245 230 / 0.8);
+}
+
+.bg-brand-green-lighter\/85 {
+  background-color: rgb(232 245 230 / 0.85);
+}
+
+.bg-brand-green-lighter\/90 {
+  background-color: rgb(232 245 230 / 0.9);
+}
+
+.bg-brand-green-lighter\/95 {
+  background-color: rgb(232 245 230 / 0.95);
+}
+
+.bg-brand-green\/0 {
+  background-color: rgb(45 80 22 / 0);
+}
+
+.bg-brand-green\/10 {
+  background-color: rgb(45 80 22 / 0.1);
+}
+
+.bg-brand-green\/100 {
+  background-color: rgb(45 80 22 / 1);
+}
+
+.bg-brand-green\/15 {
+  background-color: rgb(45 80 22 / 0.15);
+}
+
+.bg-brand-green\/20 {
+  background-color: rgb(45 80 22 / 0.2);
+}
+
+.bg-brand-green\/25 {
+  background-color: rgb(45 80 22 / 0.25);
+}
+
+.bg-brand-green\/30 {
+  background-color: rgb(45 80 22 / 0.3);
+}
+
+.bg-brand-green\/35 {
+  background-color: rgb(45 80 22 / 0.35);
+}
+
+.bg-brand-green\/40 {
+  background-color: rgb(45 80 22 / 0.4);
+}
+
+.bg-brand-green\/45 {
+  background-color: rgb(45 80 22 / 0.45);
+}
+
+.bg-brand-green\/5 {
+  background-color: rgb(45 80 22 / 0.05);
+}
+
+.bg-brand-green\/50 {
+  background-color: rgb(45 80 22 / 0.5);
+}
+
+.bg-brand-green\/55 {
+  background-color: rgb(45 80 22 / 0.55);
+}
+
+.bg-brand-green\/60 {
+  background-color: rgb(45 80 22 / 0.6);
+}
+
+.bg-brand-green\/65 {
+  background-color: rgb(45 80 22 / 0.65);
+}
+
+.bg-brand-green\/70 {
+  background-color: rgb(45 80 22 / 0.7);
+}
+
+.bg-brand-green\/75 {
+  background-color: rgb(45 80 22 / 0.75);
+}
+
+.bg-brand-green\/80 {
+  background-color: rgb(45 80 22 / 0.8);
+}
+
+.bg-brand-green\/85 {
+  background-color: rgb(45 80 22 / 0.85);
+}
+
+.bg-brand-green\/90 {
+  background-color: rgb(45 80 22 / 0.9);
+}
+
+.bg-brand-green\/95 {
+  background-color: rgb(45 80 22 / 0.95);
+}
+
+.bg-brand-orange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+}
+
+.bg-brand-orange-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
+}
+
+.bg-brand-orange-light\/0 {
+  background-color: rgb(251 146 60 / 0);
+}
+
+.bg-brand-orange-light\/10 {
+  background-color: rgb(251 146 60 / 0.1);
+}
+
+.bg-brand-orange-light\/100 {
+  background-color: rgb(251 146 60 / 1);
+}
+
+.bg-brand-orange-light\/15 {
+  background-color: rgb(251 146 60 / 0.15);
+}
+
+.bg-brand-orange-light\/20 {
+  background-color: rgb(251 146 60 / 0.2);
+}
+
+.bg-brand-orange-light\/25 {
+  background-color: rgb(251 146 60 / 0.25);
+}
+
+.bg-brand-orange-light\/30 {
+  background-color: rgb(251 146 60 / 0.3);
+}
+
+.bg-brand-orange-light\/35 {
+  background-color: rgb(251 146 60 / 0.35);
+}
+
+.bg-brand-orange-light\/40 {
+  background-color: rgb(251 146 60 / 0.4);
+}
+
+.bg-brand-orange-light\/45 {
+  background-color: rgb(251 146 60 / 0.45);
+}
+
+.bg-brand-orange-light\/5 {
+  background-color: rgb(251 146 60 / 0.05);
+}
+
+.bg-brand-orange-light\/50 {
+  background-color: rgb(251 146 60 / 0.5);
+}
+
+.bg-brand-orange-light\/55 {
+  background-color: rgb(251 146 60 / 0.55);
+}
+
+.bg-brand-orange-light\/60 {
+  background-color: rgb(251 146 60 / 0.6);
+}
+
+.bg-brand-orange-light\/65 {
+  background-color: rgb(251 146 60 / 0.65);
+}
+
+.bg-brand-orange-light\/70 {
+  background-color: rgb(251 146 60 / 0.7);
+}
+
+.bg-brand-orange-light\/75 {
+  background-color: rgb(251 146 60 / 0.75);
+}
+
+.bg-brand-orange-light\/80 {
+  background-color: rgb(251 146 60 / 0.8);
+}
+
+.bg-brand-orange-light\/85 {
+  background-color: rgb(251 146 60 / 0.85);
+}
+
+.bg-brand-orange-light\/90 {
+  background-color: rgb(251 146 60 / 0.9);
+}
+
+.bg-brand-orange-light\/95 {
+  background-color: rgb(251 146 60 / 0.95);
+}
+
+.bg-brand-orange\/0 {
+  background-color: rgb(249 115 22 / 0);
+}
+
+.bg-brand-orange\/10 {
+  background-color: rgb(249 115 22 / 0.1);
+}
+
+.bg-brand-orange\/100 {
+  background-color: rgb(249 115 22 / 1);
+}
+
+.bg-brand-orange\/15 {
+  background-color: rgb(249 115 22 / 0.15);
+}
+
+.bg-brand-orange\/20 {
+  background-color: rgb(249 115 22 / 0.2);
+}
+
+.bg-brand-orange\/25 {
+  background-color: rgb(249 115 22 / 0.25);
+}
+
+.bg-brand-orange\/30 {
+  background-color: rgb(249 115 22 / 0.3);
+}
+
+.bg-brand-orange\/35 {
+  background-color: rgb(249 115 22 / 0.35);
+}
+
+.bg-brand-orange\/40 {
+  background-color: rgb(249 115 22 / 0.4);
+}
+
+.bg-brand-orange\/45 {
+  background-color: rgb(249 115 22 / 0.45);
+}
+
+.bg-brand-orange\/5 {
+  background-color: rgb(249 115 22 / 0.05);
+}
+
+.bg-brand-orange\/50 {
+  background-color: rgb(249 115 22 / 0.5);
+}
+
+.bg-brand-orange\/55 {
+  background-color: rgb(249 115 22 / 0.55);
+}
+
+.bg-brand-orange\/60 {
+  background-color: rgb(249 115 22 / 0.6);
+}
+
+.bg-brand-orange\/65 {
+  background-color: rgb(249 115 22 / 0.65);
+}
+
+.bg-brand-orange\/70 {
+  background-color: rgb(249 115 22 / 0.7);
+}
+
+.bg-brand-orange\/75 {
+  background-color: rgb(249 115 22 / 0.75);
+}
+
+.bg-brand-orange\/80 {
+  background-color: rgb(249 115 22 / 0.8);
+}
+
+.bg-brand-orange\/85 {
+  background-color: rgb(249 115 22 / 0.85);
+}
+
+.bg-brand-orange\/90 {
+  background-color: rgb(249 115 22 / 0.9);
+}
+
+.bg-brand-orange\/95 {
+  background-color: rgb(249 115 22 / 0.95);
+}
+
 .bg-brand-yellow-light {
   --tw-bg-opacity: 1;
   background-color: rgb(253 230 138 / var(--tw-bg-opacity, 1));
+}
+
+.bg-brand-yellow-light\/0 {
+  background-color: rgb(253 230 138 / 0);
+}
+
+.bg-brand-yellow-light\/10 {
+  background-color: rgb(253 230 138 / 0.1);
+}
+
+.bg-brand-yellow-light\/100 {
+  background-color: rgb(253 230 138 / 1);
+}
+
+.bg-brand-yellow-light\/15 {
+  background-color: rgb(253 230 138 / 0.15);
+}
+
+.bg-brand-yellow-light\/20 {
+  background-color: rgb(253 230 138 / 0.2);
+}
+
+.bg-brand-yellow-light\/25 {
+  background-color: rgb(253 230 138 / 0.25);
+}
+
+.bg-brand-yellow-light\/30 {
+  background-color: rgb(253 230 138 / 0.3);
+}
+
+.bg-brand-yellow-light\/35 {
+  background-color: rgb(253 230 138 / 0.35);
+}
+
+.bg-brand-yellow-light\/40 {
+  background-color: rgb(253 230 138 / 0.4);
+}
+
+.bg-brand-yellow-light\/45 {
+  background-color: rgb(253 230 138 / 0.45);
+}
+
+.bg-brand-yellow-light\/5 {
+  background-color: rgb(253 230 138 / 0.05);
+}
+
+.bg-brand-yellow-light\/50 {
+  background-color: rgb(253 230 138 / 0.5);
+}
+
+.bg-brand-yellow-light\/55 {
+  background-color: rgb(253 230 138 / 0.55);
+}
+
+.bg-brand-yellow-light\/60 {
+  background-color: rgb(253 230 138 / 0.6);
+}
+
+.bg-brand-yellow-light\/65 {
+  background-color: rgb(253 230 138 / 0.65);
+}
+
+.bg-brand-yellow-light\/70 {
+  background-color: rgb(253 230 138 / 0.7);
+}
+
+.bg-brand-yellow-light\/75 {
+  background-color: rgb(253 230 138 / 0.75);
+}
+
+.bg-brand-yellow-light\/80 {
+  background-color: rgb(253 230 138 / 0.8);
+}
+
+.bg-brand-yellow-light\/85 {
+  background-color: rgb(253 230 138 / 0.85);
+}
+
+.bg-brand-yellow-light\/90 {
+  background-color: rgb(253 230 138 / 0.9);
+}
+
+.bg-brand-yellow-light\/95 {
+  background-color: rgb(253 230 138 / 0.95);
 }
 
 .bg-gray-100 {
@@ -1620,8 +2666,8 @@ video {
   padding-bottom: 1rem;
 }
 
-.pt-24 {
-  padding-top: 6rem;
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .pt-4 {
@@ -1630,10 +2676,6 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .text-left {
@@ -1726,9 +2768,533 @@ video {
   color: rgb(45 80 22 / var(--tw-text-opacity, 1));
 }
 
+.text-brand-green-light {
+  --tw-text-opacity: 1;
+  color: rgb(168 213 163 / var(--tw-text-opacity, 1));
+}
+
+.text-brand-green-light\/0 {
+  color: rgb(168 213 163 / 0);
+}
+
+.text-brand-green-light\/10 {
+  color: rgb(168 213 163 / 0.1);
+}
+
+.text-brand-green-light\/100 {
+  color: rgb(168 213 163 / 1);
+}
+
+.text-brand-green-light\/15 {
+  color: rgb(168 213 163 / 0.15);
+}
+
+.text-brand-green-light\/20 {
+  color: rgb(168 213 163 / 0.2);
+}
+
+.text-brand-green-light\/25 {
+  color: rgb(168 213 163 / 0.25);
+}
+
+.text-brand-green-light\/30 {
+  color: rgb(168 213 163 / 0.3);
+}
+
+.text-brand-green-light\/35 {
+  color: rgb(168 213 163 / 0.35);
+}
+
+.text-brand-green-light\/40 {
+  color: rgb(168 213 163 / 0.4);
+}
+
+.text-brand-green-light\/45 {
+  color: rgb(168 213 163 / 0.45);
+}
+
+.text-brand-green-light\/5 {
+  color: rgb(168 213 163 / 0.05);
+}
+
+.text-brand-green-light\/50 {
+  color: rgb(168 213 163 / 0.5);
+}
+
+.text-brand-green-light\/55 {
+  color: rgb(168 213 163 / 0.55);
+}
+
+.text-brand-green-light\/60 {
+  color: rgb(168 213 163 / 0.6);
+}
+
+.text-brand-green-light\/65 {
+  color: rgb(168 213 163 / 0.65);
+}
+
+.text-brand-green-light\/70 {
+  color: rgb(168 213 163 / 0.7);
+}
+
+.text-brand-green-light\/75 {
+  color: rgb(168 213 163 / 0.75);
+}
+
+.text-brand-green-light\/80 {
+  color: rgb(168 213 163 / 0.8);
+}
+
+.text-brand-green-light\/85 {
+  color: rgb(168 213 163 / 0.85);
+}
+
+.text-brand-green-light\/90 {
+  color: rgb(168 213 163 / 0.9);
+}
+
+.text-brand-green-light\/95 {
+  color: rgb(168 213 163 / 0.95);
+}
+
+.text-brand-green-lighter {
+  --tw-text-opacity: 1;
+  color: rgb(232 245 230 / var(--tw-text-opacity, 1));
+}
+
+.text-brand-green-lighter\/0 {
+  color: rgb(232 245 230 / 0);
+}
+
+.text-brand-green-lighter\/10 {
+  color: rgb(232 245 230 / 0.1);
+}
+
+.text-brand-green-lighter\/100 {
+  color: rgb(232 245 230 / 1);
+}
+
+.text-brand-green-lighter\/15 {
+  color: rgb(232 245 230 / 0.15);
+}
+
+.text-brand-green-lighter\/20 {
+  color: rgb(232 245 230 / 0.2);
+}
+
+.text-brand-green-lighter\/25 {
+  color: rgb(232 245 230 / 0.25);
+}
+
+.text-brand-green-lighter\/30 {
+  color: rgb(232 245 230 / 0.3);
+}
+
+.text-brand-green-lighter\/35 {
+  color: rgb(232 245 230 / 0.35);
+}
+
+.text-brand-green-lighter\/40 {
+  color: rgb(232 245 230 / 0.4);
+}
+
+.text-brand-green-lighter\/45 {
+  color: rgb(232 245 230 / 0.45);
+}
+
+.text-brand-green-lighter\/5 {
+  color: rgb(232 245 230 / 0.05);
+}
+
+.text-brand-green-lighter\/50 {
+  color: rgb(232 245 230 / 0.5);
+}
+
+.text-brand-green-lighter\/55 {
+  color: rgb(232 245 230 / 0.55);
+}
+
+.text-brand-green-lighter\/60 {
+  color: rgb(232 245 230 / 0.6);
+}
+
+.text-brand-green-lighter\/65 {
+  color: rgb(232 245 230 / 0.65);
+}
+
+.text-brand-green-lighter\/70 {
+  color: rgb(232 245 230 / 0.7);
+}
+
+.text-brand-green-lighter\/75 {
+  color: rgb(232 245 230 / 0.75);
+}
+
+.text-brand-green-lighter\/80 {
+  color: rgb(232 245 230 / 0.8);
+}
+
+.text-brand-green-lighter\/85 {
+  color: rgb(232 245 230 / 0.85);
+}
+
+.text-brand-green-lighter\/90 {
+  color: rgb(232 245 230 / 0.9);
+}
+
+.text-brand-green-lighter\/95 {
+  color: rgb(232 245 230 / 0.95);
+}
+
+.text-brand-green\/0 {
+  color: rgb(45 80 22 / 0);
+}
+
+.text-brand-green\/10 {
+  color: rgb(45 80 22 / 0.1);
+}
+
+.text-brand-green\/100 {
+  color: rgb(45 80 22 / 1);
+}
+
+.text-brand-green\/15 {
+  color: rgb(45 80 22 / 0.15);
+}
+
+.text-brand-green\/20 {
+  color: rgb(45 80 22 / 0.2);
+}
+
+.text-brand-green\/25 {
+  color: rgb(45 80 22 / 0.25);
+}
+
+.text-brand-green\/30 {
+  color: rgb(45 80 22 / 0.3);
+}
+
+.text-brand-green\/35 {
+  color: rgb(45 80 22 / 0.35);
+}
+
+.text-brand-green\/40 {
+  color: rgb(45 80 22 / 0.4);
+}
+
+.text-brand-green\/45 {
+  color: rgb(45 80 22 / 0.45);
+}
+
+.text-brand-green\/5 {
+  color: rgb(45 80 22 / 0.05);
+}
+
+.text-brand-green\/50 {
+  color: rgb(45 80 22 / 0.5);
+}
+
+.text-brand-green\/55 {
+  color: rgb(45 80 22 / 0.55);
+}
+
+.text-brand-green\/60 {
+  color: rgb(45 80 22 / 0.6);
+}
+
+.text-brand-green\/65 {
+  color: rgb(45 80 22 / 0.65);
+}
+
+.text-brand-green\/70 {
+  color: rgb(45 80 22 / 0.7);
+}
+
+.text-brand-green\/75 {
+  color: rgb(45 80 22 / 0.75);
+}
+
+.text-brand-green\/80 {
+  color: rgb(45 80 22 / 0.8);
+}
+
+.text-brand-green\/85 {
+  color: rgb(45 80 22 / 0.85);
+}
+
+.text-brand-green\/90 {
+  color: rgb(45 80 22 / 0.9);
+}
+
+.text-brand-green\/95 {
+  color: rgb(45 80 22 / 0.95);
+}
+
 .text-brand-orange {
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity, 1));
+}
+
+.text-brand-orange-light {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity, 1));
+}
+
+.text-brand-orange-light\/0 {
+  color: rgb(251 146 60 / 0);
+}
+
+.text-brand-orange-light\/10 {
+  color: rgb(251 146 60 / 0.1);
+}
+
+.text-brand-orange-light\/100 {
+  color: rgb(251 146 60 / 1);
+}
+
+.text-brand-orange-light\/15 {
+  color: rgb(251 146 60 / 0.15);
+}
+
+.text-brand-orange-light\/20 {
+  color: rgb(251 146 60 / 0.2);
+}
+
+.text-brand-orange-light\/25 {
+  color: rgb(251 146 60 / 0.25);
+}
+
+.text-brand-orange-light\/30 {
+  color: rgb(251 146 60 / 0.3);
+}
+
+.text-brand-orange-light\/35 {
+  color: rgb(251 146 60 / 0.35);
+}
+
+.text-brand-orange-light\/40 {
+  color: rgb(251 146 60 / 0.4);
+}
+
+.text-brand-orange-light\/45 {
+  color: rgb(251 146 60 / 0.45);
+}
+
+.text-brand-orange-light\/5 {
+  color: rgb(251 146 60 / 0.05);
+}
+
+.text-brand-orange-light\/50 {
+  color: rgb(251 146 60 / 0.5);
+}
+
+.text-brand-orange-light\/55 {
+  color: rgb(251 146 60 / 0.55);
+}
+
+.text-brand-orange-light\/60 {
+  color: rgb(251 146 60 / 0.6);
+}
+
+.text-brand-orange-light\/65 {
+  color: rgb(251 146 60 / 0.65);
+}
+
+.text-brand-orange-light\/70 {
+  color: rgb(251 146 60 / 0.7);
+}
+
+.text-brand-orange-light\/75 {
+  color: rgb(251 146 60 / 0.75);
+}
+
+.text-brand-orange-light\/80 {
+  color: rgb(251 146 60 / 0.8);
+}
+
+.text-brand-orange-light\/85 {
+  color: rgb(251 146 60 / 0.85);
+}
+
+.text-brand-orange-light\/90 {
+  color: rgb(251 146 60 / 0.9);
+}
+
+.text-brand-orange-light\/95 {
+  color: rgb(251 146 60 / 0.95);
+}
+
+.text-brand-orange\/0 {
+  color: rgb(249 115 22 / 0);
+}
+
+.text-brand-orange\/10 {
+  color: rgb(249 115 22 / 0.1);
+}
+
+.text-brand-orange\/100 {
+  color: rgb(249 115 22 / 1);
+}
+
+.text-brand-orange\/15 {
+  color: rgb(249 115 22 / 0.15);
+}
+
+.text-brand-orange\/20 {
+  color: rgb(249 115 22 / 0.2);
+}
+
+.text-brand-orange\/25 {
+  color: rgb(249 115 22 / 0.25);
+}
+
+.text-brand-orange\/30 {
+  color: rgb(249 115 22 / 0.3);
+}
+
+.text-brand-orange\/35 {
+  color: rgb(249 115 22 / 0.35);
+}
+
+.text-brand-orange\/40 {
+  color: rgb(249 115 22 / 0.4);
+}
+
+.text-brand-orange\/45 {
+  color: rgb(249 115 22 / 0.45);
+}
+
+.text-brand-orange\/5 {
+  color: rgb(249 115 22 / 0.05);
+}
+
+.text-brand-orange\/50 {
+  color: rgb(249 115 22 / 0.5);
+}
+
+.text-brand-orange\/55 {
+  color: rgb(249 115 22 / 0.55);
+}
+
+.text-brand-orange\/60 {
+  color: rgb(249 115 22 / 0.6);
+}
+
+.text-brand-orange\/65 {
+  color: rgb(249 115 22 / 0.65);
+}
+
+.text-brand-orange\/70 {
+  color: rgb(249 115 22 / 0.7);
+}
+
+.text-brand-orange\/75 {
+  color: rgb(249 115 22 / 0.75);
+}
+
+.text-brand-orange\/80 {
+  color: rgb(249 115 22 / 0.8);
+}
+
+.text-brand-orange\/85 {
+  color: rgb(249 115 22 / 0.85);
+}
+
+.text-brand-orange\/90 {
+  color: rgb(249 115 22 / 0.9);
+}
+
+.text-brand-orange\/95 {
+  color: rgb(249 115 22 / 0.95);
+}
+
+.text-brand-yellow-light {
+  --tw-text-opacity: 1;
+  color: rgb(253 230 138 / var(--tw-text-opacity, 1));
+}
+
+.text-brand-yellow-light\/0 {
+  color: rgb(253 230 138 / 0);
+}
+
+.text-brand-yellow-light\/10 {
+  color: rgb(253 230 138 / 0.1);
+}
+
+.text-brand-yellow-light\/100 {
+  color: rgb(253 230 138 / 1);
+}
+
+.text-brand-yellow-light\/15 {
+  color: rgb(253 230 138 / 0.15);
+}
+
+.text-brand-yellow-light\/20 {
+  color: rgb(253 230 138 / 0.2);
+}
+
+.text-brand-yellow-light\/25 {
+  color: rgb(253 230 138 / 0.25);
+}
+
+.text-brand-yellow-light\/30 {
+  color: rgb(253 230 138 / 0.3);
+}
+
+.text-brand-yellow-light\/35 {
+  color: rgb(253 230 138 / 0.35);
+}
+
+.text-brand-yellow-light\/40 {
+  color: rgb(253 230 138 / 0.4);
+}
+
+.text-brand-yellow-light\/45 {
+  color: rgb(253 230 138 / 0.45);
+}
+
+.text-brand-yellow-light\/5 {
+  color: rgb(253 230 138 / 0.05);
+}
+
+.text-brand-yellow-light\/50 {
+  color: rgb(253 230 138 / 0.5);
+}
+
+.text-brand-yellow-light\/55 {
+  color: rgb(253 230 138 / 0.55);
+}
+
+.text-brand-yellow-light\/60 {
+  color: rgb(253 230 138 / 0.6);
+}
+
+.text-brand-yellow-light\/65 {
+  color: rgb(253 230 138 / 0.65);
+}
+
+.text-brand-yellow-light\/70 {
+  color: rgb(253 230 138 / 0.7);
+}
+
+.text-brand-yellow-light\/75 {
+  color: rgb(253 230 138 / 0.75);
+}
+
+.text-brand-yellow-light\/80 {
+  color: rgb(253 230 138 / 0.8);
+}
+
+.text-brand-yellow-light\/85 {
+  color: rgb(253 230 138 / 0.85);
+}
+
+.text-brand-yellow-light\/90 {
+  color: rgb(253 230 138 / 0.9);
+}
+
+.text-brand-yellow-light\/95 {
+  color: rgb(253 230 138 / 0.95);
 }
 
 .text-gray-500 {
@@ -1796,12 +3362,6 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1816,10 +3376,6 @@ video {
 
 .duration-200 {
   transition-duration: 200ms;
-}
-
-.duration-300 {
-  transition-duration: 300ms;
 }
 
 .ease-in-out {
