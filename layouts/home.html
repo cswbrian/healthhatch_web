@@ -80,6 +80,37 @@
       right: 50px;
       animation: gradient-flow-3 22s ease-in-out infinite;
     }
+    
+    /* Mobile styles for gradient blobs */
+    @media (max-width: 767px) {
+      .animated-gradient-blob {
+        filter: blur(50px);
+      }
+      
+      .gradient-blob-1 {
+        width: 400px;
+        height: 400px;
+        top: auto;
+        bottom: 5%;
+        left: -100px;
+        right: auto;
+      }
+      
+      .gradient-blob-2 {
+        width: 450px;
+        height: 450px;
+        bottom: 0%;
+        right: -80px;
+      }
+      
+      .gradient-blob-3 {
+        width: 420px;
+        height: 420px;
+        top: auto;
+        bottom: 10%;
+        right: 10px;
+      }
+    }
   </style>
   
   <!-- Hero Section -->
@@ -105,28 +136,15 @@
         </h1>
         
         <p class="text-sm md:text-xl text-gray-700 mb-8 max-w-2xl leading-relaxed">
-          {{ if eq .Site.Language.Lang "en" }}
-            Health Hatch is dedicated to promoting holistic health (from physical to mental). Whether you are an individual seeking assistance or an enterprise looking to enhance employee well-being, we have professional solutions.
-          {{ else }}
-            Health Hatch 致力於推廣全人健康（從生理到心理），無論你是尋求協助的個人，還是希望提升員工福祉的企業，我們都有專業的方案。
-          {{ end }}
+          {{ i18n "heroDescription" }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4 items-start">
-          {{ if eq .Site.Language.Lang "en" }}
-            <a href="/individual-services/" class="btn-primary">
-              Book Individual Services
-            </a>
-            <a href="/enterprise-solutions/" class="btn-secondary">
-              Inquire About Enterprise Solutions
-            </a>
-          {{ else }}
-            <a href="/zh-hk/individual-services/" class="btn-primary">
-              個人服務預約
-            </a>
-            <a href="/zh-hk/enterprise-solutions/" class="btn-secondary">
-              企業方案查詢
-            </a>
-          {{ end }}
+          <a href="{{ "/individual-services/" | relLangURL }}" class="btn-primary">
+            {{ i18n "individualServicesButton" }}
+          </a>
+          <a href="{{ "/enterprise-solutions/" | relLangURL }}" class="btn-secondary">
+            {{ i18n "enterpriseSolutionsButton" }}
+          </a>
         </div>
       </div>
     </div>
