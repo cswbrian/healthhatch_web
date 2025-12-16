@@ -25,6 +25,7 @@ module.exports = {
           light: '#fb923c',
         },
         'brand-yellow': {
+          DEFAULT: '#fdc92d',
           light: '#fde68a',
         },
       },

@@ -127,11 +127,14 @@
     <!-- Hero Content -->
     <div class="container mx-auto px-4 sm:px-6 pt-20 pb-4 py-16 relative z-10">
       <div class="max-w-4xl">
-        <h1 class="text-5xl md:text-7xl lg:text-8xl text-brand-green mb-6 leading-tight text-left">
+        <h1 class="text-brand-green mb-6 leading-tight text-left">
           {{ if eq .Site.Language.Lang "en" }}
+          <span class="text-4xl md:text-7xl lg:text-8xl">
             Connecting <span class="text-brand-orange">Health</span><br />
             From <span class="text-brand-orange">Individual</span> to <span class="text-brand-orange">Community</span>
+          </span>
           {{ else }}
+          <span class="text-6xl md:text-7xl lg:text-8xl">
             連結<span class="text-brand-orange">健康</span><br />
             由<span class="text-brand-orange">個人</span>到<span class="text-brand-orange">社區</span>
           {{ end }}

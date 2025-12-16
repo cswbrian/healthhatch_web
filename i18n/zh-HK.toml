@@ -46,6 +46,12 @@ other = "聯絡我們"
 [footerAddress]
 other = "香港九龍青山道700號時運中心1303"
 
+[footerFollowUs]
+other = "關注我們"
+
+[footerCopyright]
+other = "社區健康協會有限公司 健康籽 版權所有"
+
 [heroDescription]
 other = "Health Hatch 致力於推廣全人健康（從生理到心理），無論你是尋求協助的個人，還是希望提升員工福祉的企業，我們都有專業的方案。"
 
